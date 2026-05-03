@@ -1,0 +1,386 @@
+:root {
+  --ink: #101322;
+  --paper: #f8f4ec;
+  --navy: #07112f;
+  --blue: #102a68;
+  --purple: #5a2391;
+  --magenta: #c02c9b;
+  --gold: #f4c95d;
+  --cream: #fff7df;
+  --cyan: #4de2ff;
+  --muted: #6e7183;
+  --shadow: 0 28px 70px rgba(4, 8, 28, .28);
+}
+
+* { box-sizing: border-box; }
+html { background: #111421; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(90,35,145,.35), transparent 34rem),
+    linear-gradient(135deg, #111421 0%, #201036 100%);
+}
+
+.export-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: .8rem 1.2rem;
+  color: white;
+  background: rgba(4, 8, 28, .82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+.export-bar span { display: block; color: #c9c8d6; font-size: .85rem; }
+button {
+  border: 0;
+  padding: .8rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold), #ff9f43);
+  color: #17100a;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(244,201,93,.3);
+}
+
+.magazine { padding: 34px 0 70px; }
+.page {
+  position: relative;
+  overflow: hidden;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 34px;
+  padding: 20mm 17mm 16mm;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+  page-break-after: always;
+}
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.dark-page { color: white; background: var(--navy); }
+.dark-page::before {
+  background:
+    radial-gradient(circle at 72% 12%, rgba(192,44,155,.55), transparent 27%),
+    radial-gradient(circle at 12% 82%, rgba(77,226,255,.28), transparent 32%),
+    linear-gradient(135deg, #060b21, #15255e 52%, #4c1d75);
+}
+
+.page-header, .page-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: .72rem;
+  color: var(--purple);
+}
+.page-header.light, .page-footer.light { color: rgba(255,255,255,.86); }
+.page-footer { position: absolute; left: 17mm; right: 17mm; bottom: 10mm; color: var(--muted); }
+.issue-tag { color: var(--gold); }
+.page-num { border: 1px solid currentColor; border-radius: 999px; padding: .34rem .55rem; }
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { line-height: .92; letter-spacing: -.045em; }
+h1 { font-family: Playfair Display, serif; font-size: 6.8rem; color: white; text-shadow: 0 12px 38px rgba(0,0,0,.45); }
+h1 span { color: var(--gold); }
+h2 { font-family: Playfair Display, serif; font-size: 4.45rem; margin: 18mm 0 8mm; }
+h2 span { color: var(--purple); }
+h3 { font-size: 1.05rem; margin-bottom: .45rem; }
+p { line-height: 1.62; font-size: 1rem; }
+.lead { font-size: 1.28rem; line-height: 1.5; font-weight: 650; }
+.lead.narrow { max-width: 86%; }
+.kicker { text-transform: uppercase; letter-spacing: .16em; font-size: .75rem; font-weight: 900; color: var(--gold); }
+
+.cover-page { padding: 0; background: #070a17; color: white; }
+.cover-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: none;
+}
+
+.split-hero, .two-col { display: grid; grid-template-columns: 1.05fr .95fr; gap: 10mm; align-items: center; }
+.align-start { align-items: start; }
+.photo-card, .portrait-placeholder {
+  min-height: 104mm;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.82);
+  box-shadow: 0 20px 48px rgba(16,42,104,.24);
+}
+.worship-lights {
+  position: relative;
+  overflow: hidden;
+  min-height: 330px;
+  background: none;
+}
+.worship-lights img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.portrait-placeholder {
+  min-height: 96mm;
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+.portrait-placeholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.cards { display: grid; gap: 5mm; margin: 10mm 0; }
+.cards.three { grid-template-columns: repeat(3, 1fr); }
+.cards.two { grid-template-columns: repeat(2, 1fr); }
+.cards article, .resource-wall article, .callout, .checklist, .gear-card, .signature-card {
+  border-radius: 24px;
+  padding: 6mm;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(16,19,34,.08);
+  box-shadow: 0 18px 40px rgba(16,19,34,.08);
+}
+.cards i, .cta-grid i { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--gold), #ff9f43); font-style: normal; margin-bottom: .8rem; }
+blockquote {
+  margin: 9mm 0 0;
+  padding: 7mm 9mm;
+  border-left: 7px solid var(--gold);
+  background: linear-gradient(135deg, rgba(244,201,93,.18), rgba(90,35,145,.08));
+  font-family: Playfair Display, serif;
+  font-size: 1.72rem;
+  line-height: 1.25;
+  border-radius: 0 24px 24px 0;
+}
+
+.gold-rule { width: 44mm; height: 5px; border-radius: 99px; background: linear-gradient(90deg, var(--gold), transparent); margin-bottom: 8mm; }
+.callout.gold { background: linear-gradient(135deg, rgba(244,201,93,.96), rgba(255,247,223,.92)); color: #221809; }
+.callout.violet { margin-top: 10mm; color: white; background: linear-gradient(135deg, rgba(192,44,155,.9), rgba(90,35,145,.82)); border-color: rgba(255,255,255,.18); }
+ul { padding-left: 1.2rem; line-height: 1.65; }
+.icon-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; margin-top: 12mm; }
+.icon-strip span, .filter-row span, .mini-list span { border-radius: 999px; padding: .8rem .9rem; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); text-align: center; font-weight: 800; }
+
+.section-label { margin-top: 17mm; color: var(--gold); font-family: Bebas Neue, sans-serif; font-size: 1.4rem; letter-spacing: .14em; }
+.feature-band { display: grid; grid-template-columns: .82fr 1.18fr; gap: 8mm; align-items: center; }
+.check-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4mm; }
+.check-grid span { background: #fff; border-radius: 14px; padding: .85rem; font-weight: 700; }
+
+.beam { position: absolute; width: 18mm; height: 230mm; top: -30mm; transform: rotate(27deg); filter: blur(4px); opacity: .55; z-index: -1; }
+.beam-one { left: 28mm; background: linear-gradient(var(--cyan), transparent); }
+.beam-two { right: 44mm; background: linear-gradient(var(--gold), transparent); }
+.timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; margin: 13mm 0 10mm; }
+.timeline::before { content: ""; position: absolute; left: 10%; right: 10%; top: 21px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--cyan)); opacity: .8; }
+.timeline div { position: relative; padding-top: 15mm; }
+.timeline b { position: absolute; top: 0; left: 0; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--gold); color: #130c08; }
+
+.foundation-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5mm; margin-top: 8mm; }
+.foundation-grid div { padding: 6mm; border-radius: 24px; color: white; background: linear-gradient(135deg, #102a68, #5a2391); }
+.foundation-grid span { color: var(--gold); font-family: Bebas Neue, sans-serif; font-size: 2rem; }
+
+.circuit { position: absolute; inset: 0; opacity: .18; background-image: linear-gradient(90deg, white 1px, transparent 1px), linear-gradient(0deg, white 1px, transparent 1px); background-size: 18mm 18mm; mask-image: radial-gradient(circle at 75% 25%, black, transparent 60%); }
+.gear-card { color: var(--ink); background: rgba(255,255,255,.95); }
+.gear-card img { width: 100%; height: 72mm; object-fit: cover; border-radius: 18px; margin-bottom: 5mm; background: #e9e6f1; }
+.mini-list { display: flex; flex-wrap: wrap; gap: 3mm; margin-top: 8mm; }
+.mini-list span { color: white; text-align: left; }
+
+.resource-wall { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5mm; margin: 10mm 0; }
+.resource-wall article { background: linear-gradient(145deg, white, #f2ebff); border-top: 6px solid var(--gold); }
+.divider-title { display: flex; align-items: center; gap: 5mm; margin: 10mm 0 5mm; color: var(--purple); font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
+.divider-title::before, .divider-title::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.filter-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+.filter-row span { background: #151b3a; color: white; border: 0; }
+
+.mistake-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5mm; margin-top: 11mm; }
+.mistake-list div { padding: 6mm; border-radius: 24px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); }
+.mistake-list b { color: var(--gold); font-family: Bebas Neue, sans-serif; font-size: 2.4rem; }
+.wide-quote { color: white; background: rgba(255,255,255,.09); }
+
+.final-page { color: white; background: #080b1e; }
+.final-bg { position: absolute; inset: 0; background: radial-gradient(circle at 72% 18%, rgba(244,201,93,.55), transparent 22%), radial-gradient(circle at 20% 40%, rgba(77,226,255,.32), transparent 28%), linear-gradient(135deg, #07112f, #321253 58%, #02040e); z-index: -1; }
+.final-content { margin-top: 20mm; }
+.final-content h2 { font-size: 4.25rem; }
+.cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin: 12mm 0; }
+.cta-grid div { padding: 6mm; border-radius: 24px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); }
+.signature-card { margin-top: 12mm; color: var(--ink); background: linear-gradient(135deg, var(--gold), #fff4c8); }
+.signature-card span { display: block; font-family: Bebas Neue, sans-serif; letter-spacing: .16em; font-size: 1.4rem; }
+.signature-card strong { font-family: Playfair Display, serif; font-size: 2rem; line-height: 1.1; }
+.final-cta { margin-top: 9mm; padding: 7mm; }
+.final-cta strong { display: block; max-width: 96%; font-size: 1.34rem; line-height: 1.22; margin-top: 2mm; }
+.contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5mm 5mm; margin-top: 5mm; }
+.contact-grid p { margin: 0; font-size: .82rem; line-height: 1.3; }
+.contact-grid a { color: #102a68; font-weight: 800; text-decoration: none; }
+.final-cta em { display: block; margin-top: 5mm; font-weight: 900; font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: #5a2391; }
+
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: white; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none !important; }
+  .magazine { padding: 0; }
+  .page { margin: 0; box-shadow: none; width: 210mm; height: 297mm; min-height: 297mm; max-height: 297mm; break-after: page; page-break-after: always; }
+
+  .cover-page {
+    background: #070a17 url("assets/images/worship-guide-cover.jpg") center center / cover no-repeat !important;
+  }
+
+  .cover-page .cover-art {
+    display: none !important;
+  }
+
+  .intro-page .split-hero,
+  .worshipper-page .feature-band {
+    display: block !important;
+  }
+
+  .intro-page .split-hero > div:first-child {
+    display: inline-block;
+    width: 51%;
+    margin-right: 5%;
+    vertical-align: middle;
+  }
+
+  .intro-page .worship-lights {
+    display: inline-block;
+    width: 43%;
+    height: 104mm;
+    min-height: 104mm;
+    vertical-align: middle;
+    position: relative;
+    overflow: visible !important;
+    border-radius: 28px;
+    background: url("assets/images/worship-intro.jpg") center center / cover no-repeat !important;
+    box-shadow: none !important;
+  }
+
+  .intro-page .worship-lights img {
+    display: none !important;
+  }
+
+  .worshipper-page .portrait-placeholder {
+    display: inline-block;
+    width: 36%;
+    height: 96mm;
+    min-height: 96mm;
+    margin-right: 6%;
+    vertical-align: middle;
+    position: relative;
+    overflow: visible !important;
+    border-radius: 28px;
+    background: url("assets/images/worship-character.jpg") center center / cover no-repeat !important;
+    box-shadow: none !important;
+  }
+
+  .worshipper-page .portrait-placeholder img {
+    display: none !important;
+  }
+
+  .worshipper-page .feature-band > div:last-child {
+    display: inline-block;
+    width: 57%;
+    vertical-align: middle;
+  }
+
+  .worshipper-page .feature-band,
+  .worshipper-page .checklist,
+  .worshipper-page .check-grid,
+  .worshipper-page .check-grid span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .worshipper-page .checklist {
+    clear: both;
+    background: rgba(255,255,255,.72) !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .music-page {
+    padding-top: 15mm;
+    padding-bottom: 12mm;
+  }
+
+  .music-page h2 {
+    margin: 12mm 0 5mm;
+    font-size: 4rem;
+  }
+
+  .music-page .lead {
+    font-size: 1.16rem;
+    line-height: 1.36;
+    margin-bottom: 0;
+  }
+
+  .music-page .cards {
+    gap: 4mm;
+    margin: 6mm 0;
+  }
+
+  .music-page .cards article {
+    padding: 4.5mm;
+  }
+
+  .music-page .cards i {
+    width: 34px;
+    height: 34px;
+    margin-bottom: .45rem;
+  }
+
+  .music-page .cards h3,
+  .music-page .foundation-grid h3 {
+    margin-bottom: .25rem;
+    font-size: .98rem;
+  }
+
+  .music-page .cards p,
+  .music-page .foundation-grid p {
+    font-size: .86rem;
+    line-height: 1.38;
+    margin-bottom: 0;
+  }
+
+  .music-page .foundation-grid {
+    gap: 4mm;
+    margin-top: 5mm;
+  }
+
+  .music-page .foundation-grid div {
+    padding: 4.2mm;
+    min-height: 0;
+  }
+
+  .music-page .foundation-grid span {
+    display: block;
+    font-size: 1.55rem;
+    line-height: 1;
+    margin-bottom: .2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .page { width: min(100vw, 210mm); min-height: auto; aspect-ratio: 210 / 297; transform-origin: top center; }
+}

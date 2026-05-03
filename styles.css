@@ -165,6 +165,122 @@ main {
   gap: 0.75rem;
 }
 
+.featured-section {
+  margin-top: 4.5rem;
+}
+
+.featured-header {
+  margin-bottom: 1.5rem;
+}
+
+.featured-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.featured-article-card,
+.recommended-gear-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(199, 160, 79, 0.24);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(199, 160, 79, 0.16), transparent 34rem),
+    linear-gradient(135deg, rgba(16, 16, 16, 0.96), rgba(8, 8, 8, 0.98));
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+}
+
+.featured-article-card {
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.featured-article-card::before,
+.recommended-gear-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 27px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.featured-article-card h3,
+.recommended-gear-card h3 {
+  max-width: 760px;
+  margin: 0 0 1rem;
+  font-family: "Marcellus", serif;
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
+  line-height: 1.04;
+}
+
+.featured-article-card p:not(.overline),
+.recommended-gear-card p:not(.overline) {
+  max-width: 760px;
+  margin-bottom: 1.75rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.08rem);
+}
+
+.recommended-gear-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.recommended-gear-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+}
+
+.recommended-gear-card p:not(.overline) {
+  margin-bottom: 1.1rem;
+}
+
+.gear-image-wrap {
+  padding: 1rem 1rem 0;
+}
+
+.gear-image-wrap img {
+  width: 100%;
+  height: clamp(190px, 22vw, 240px);
+  object-fit: contain;
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.36);
+}
+
+.gear-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.15rem clamp(1.35rem, 3vw, 1.75rem) clamp(1.35rem, 3vw, 1.75rem);
+}
+
+.gear-benefits {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  color: var(--text);
+}
+
+.gear-benefits li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.gear-benefits li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
 .btn {
   padding: 0.85rem 1.5rem;
   border-radius: 999px;
@@ -495,6 +611,10 @@ audio {
     max-height: 72px;
   }
 
+  .featured-layout {
+    grid-template-columns: 1fr;
+  }
+
   .connect-list li {
     flex-direction: column;
     align-items: flex-start;
@@ -514,6 +634,19 @@ audio {
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .featured-section {
+    margin-top: 3rem;
+  }
+
+  .featured-article-card,
+  .recommended-gear-card {
+    border-radius: 22px;
+  }
+
+  .gear-image-wrap {
+    padding: 0.85rem 0.85rem 0;
   }
 
   .brand-logo {
@@ -817,6 +950,491 @@ h3 {
 
   .connect-list a {
     text-align: left;
-}.site-logo {
-  max-height: 140px !important;
+  }
+
+  .site-logo {
+    max-height: 140px !important;
+  }
+}
+
+/* Worship Guide popup download */
+.worship-guide-feature {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: center;
+  margin-top: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid rgba(199, 160, 79, 0.28);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(199, 160, 79, 0.2), transparent 30rem),
+    linear-gradient(135deg, rgba(16, 16, 16, 0.98), rgba(5, 5, 5, 0.96));
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.38);
+}
+
+.worship-guide-feature::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 27px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.worship-guide-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.worship-guide-copy h3 {
+  margin: 0 0 1rem;
+  font-family: "Marcellus", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.worship-guide-copy p:not(.overline) {
+  max-width: 56ch;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.worship-guide-feature img {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 280px);
+  justify-self: center;
+  border-radius: 20px;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.48);
+}
+
+.guide-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.guide-modal.open {
+  display: flex;
+}
+
+.guide-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.guide-modal__dialog {
+  position: relative;
+  width: min(100%, 520px);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid rgba(199, 160, 79, 0.34);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(199, 160, 79, 0.18), transparent 20rem),
+    linear-gradient(145deg, #141414, #070707);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.64);
+}
+
+.guide-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.guide-modal__dialog h2 {
+  margin: 0 2.5rem 0.75rem 0;
+  font-family: "Marcellus", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+}
+
+.guide-modal__intro,
+.guide-download p {
+  color: var(--muted);
+}
+
+.guide-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.guide-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.guide-form input {
+  width: 100%;
+  border: 1px solid rgba(199, 160, 79, 0.24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--text);
+  padding: 0.95rem 1rem;
+  font: inherit;
+  outline: none;
+}
+
+.guide-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(199, 160, 79, 0.12);
+}
+
+.guide-submit {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.guide-download {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(199, 160, 79, 0.22);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.guide-download h3 {
+  font-family: "Marcellus", serif;
+  font-size: 1.75rem;
+}
+
+body.guide-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .worship-guide-feature {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About section refinements */
+.about-header {
+  margin-bottom: 0.7rem;
+}
+
+.about-accent-line {
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin: 0 0 2rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), rgba(199, 160, 79, 0));
+}
+
+.about-grid {
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+}
+
+.about-copy {
+  max-width: 76ch;
+}
+
+.about-copy p {
+  position: relative;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.86;
+}
+
+.about-copy p + p {
+  margin-top: 1.15rem;
+  padding-top: 1.15rem;
+}
+
+.about-copy p + p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 1px;
+  background: rgba(199, 160, 79, 0.36);
+}
+
+.about-copy span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Music Store collage image */
+.music-store-collage {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+/* Article modal popup */
+.article-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.article-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.article-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.article-modal__dialog {
+  position: relative;
+  width: min(100%, 760px);
+  max-height: min(86vh, 780px);
+  overflow-y: auto;
+  padding: clamp(1.5rem, 4vw, 2.6rem);
+  border: 1px solid rgba(199, 160, 79, 0.34);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(199, 160, 79, 0.2), transparent 22rem),
+    linear-gradient(145deg, #151515, #070707);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.68);
+  transform: translateY(18px) scale(0.98);
+  transition: transform 0.28s ease;
+}
+
+.article-modal.open .article-modal__dialog {
+  transform: translateY(0) scale(1);
+}
+
+.article-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.article-modal__dialog h2 {
+  margin: 0 3rem 0.5rem 0;
+  font-family: "Marcellus", serif;
+  font-size: clamp(2.15rem, 6vw, 3.7rem);
+  line-height: 1;
+}
+
+.article-modal__subtitle {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  font-weight: 700;
+}
+
+.article-modal__body {
+  display: grid;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+.article-modal__body p {
+  margin: 0;
+  line-height: 1.85;
+}
+
+.article-modal__button {
+  margin-top: 1.8rem;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .article-modal {
+    padding: 0.85rem;
+  }
+
+  .article-modal__dialog {
+    max-height: 88vh;
+    border-radius: 22px;
+  }
+}
+
+/* Worship session booking popup */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.booking-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.booking-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.booking-modal__dialog {
+  position: relative;
+  width: min(100%, 760px);
+  max-height: min(88vh, 820px);
+  overflow-y: auto;
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  border: 1px solid rgba(199, 160, 79, 0.34);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(199, 160, 79, 0.18), transparent 22rem),
+    linear-gradient(145deg, #151515, #070707);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.68);
+  transform: translateY(18px) scale(0.98);
+  transition: transform 0.28s ease;
+}
+
+.booking-modal.open .booking-modal__dialog {
+  transform: translateY(0) scale(1);
+}
+
+.booking-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.booking-modal__dialog h2 {
+  margin: 0 3rem 0.75rem 0;
+  font-family: "Marcellus", serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1;
+}
+
+.booking-modal__intro,
+.booking-success p {
+  color: var(--muted);
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.booking-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.booking-form__full,
+.booking-submit {
+  grid-column: 1 / -1;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  border: 1px solid rgba(199, 160, 79, 0.24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--text);
+  padding: 0.95rem 1rem;
+  font: inherit;
+  outline: none;
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(199, 160, 79, 0.12);
+}
+
+.booking-success {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(199, 160, 79, 0.22);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.booking-success h3 {
+  font-family: "Marcellus", serif;
+  font-size: 1.75rem;
+}
+
+@media (max-width: 680px) {
+  .booking-modal {
+    padding: 0.85rem;
+  }
+
+  .booking-modal__dialog {
+    max-height: 88vh;
+    border-radius: 22px;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
 }

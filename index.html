@@ -3,203 +3,346 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Natanael Cabrera Music equips worship teams, students, churches, and families through music, training, worship resources, and instruments." />
   <title>Natanael Cabrera Music</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#home" class="logo-wrap">
-        <img src="assets/logo/logo.png" alt="Natanael Cabrera Music" class="site-logo" />
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Natanael Cabrera Music home">
+        <img class="brand-logo site-logo" src="./assets/logo/logo.png" alt="Natanael Cabrera Music" />
+        <span class="sr-only">Natanael Cabrera Music</span>
       </a>
 
-      <nav class="site-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#music">Music</a>
-        <a href="#services">Services</a>
-        <a href="#store">Shop</a>
-        <a href="#resources">Resources</a>
-        <a href="#connect">Connect</a>
-      </nav>
-    </div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="https://cabreramusicstore.com">Shop</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section id="home" class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">WORSHIP • EDUCATION • EXCELLENCE</p>
-          <h1>Equipping the next generation of worshippers through music, training, and resources.</h1>
-          <p class="hero-subtext">Music. Worship Leadership. Instruments. All in one place.</p>
+  <main id="top">
+    <section class="hero fade-in" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="overline">Worship Reflection</p>
+        <h1 id="hero-title">When Worship Becomes Routine</h1>
+        <p class="subheadline">In many churches today, worship has become something familiar, almost automatic. But worship was never meant to become routine. It was meant to be intentional, sacred, and centered on the presence of God.</p>
+        <div class="hero-actions">
+          <button class="btn primary btn-primary read-article-trigger" type="button" data-article="hero">Read Article</button>
+        </div>
+      </div>
 
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="https://open.spotify.com/artist/0g0j75LKRvyMPzTlWVytFX?si=z8WcZdTrSOWwRGWrzNx5CQ" target="_blank" rel="noopener noreferrer">Listen to Music</a>
-            <a class="btn btn-outline" href="https://wa.me/17549005470?text=Hi%20Natanael%2C%20I%20am%20interested%20in%20your%20worship%20music%20services." target="_blank" rel="noopener noreferrer">Book a Worship Session</a>
-            <a class="btn btn-dark" href="https://cabreramusicstore.com" target="_blank" rel="noopener noreferrer">Shop Instruments</a>
+      <figure class="hero-figure">
+        <img src="./assets/images/hero.jpg" alt="Natanael Cabrera leading music and worship" />
+      </figure>
+    </section>
+
+    <section class="featured-section fade-in" id="worship-article" aria-labelledby="featured-title">
+      <div class="section-header featured-header">
+        <h2 id="featured-title">Featured Article</h2>
+        <span class="divider" aria-hidden="true"></span>
+      </div>
+
+      <div class="featured-layout">
+        <article class="featured-article-card" aria-labelledby="featured-article-title">
+          <p class="overline">Worship Reflection</p>
+          <h3 id="featured-article-title">What We Forget in Worship</h3>
+          <p>When worship becomes routine, we often lose sight of what truly matters. This reflection explores the heart behind worship and how to return to a place of authenticity, surrender, and connection with God.</p>
+          <button class="btn outline btn-outline read-article-trigger" type="button" data-article="featured" aria-label="Read article: What We Forget in Worship">Read Article</button>
+        </article>
+
+        <article class="recommended-gear-card" aria-labelledby="recommended-gear-title">
+          <div class="gear-image-wrap">
+            <img src="./assets/images/xvive-u4.jpg" alt="Xvive U4 Wireless In-Ear Monitor System" />
           </div>
-        </div>
-
-        <div class="hero-image-wrap">
-          <img src="assets/images/hero.jpg" alt="Natanael Cabrera" class="hero-image" />
-        </div>
+          <div class="gear-content">
+            <p class="overline">Recommended Gear</p>
+            <h3 id="recommended-gear-title">Xvive U4 Wireless In-Ear Monitor System</h3>
+            <p>An affordable and reliable wireless in-ear monitoring system perfect for worship teams. Provides clear audio, mobility, and better stage communication.</p>
+            <ul class="gear-benefits">
+              <li>Wireless freedom on stage</li>
+              <li>Easy setup for any church</li>
+              <li>Clear and stable signal</li>
+            </ul>
+            <a class="btn primary btn-primary" href="https://cabreramusicstore.com/products/xvive-u4-wireless-in-ear-monitor-system?variant=46240894353569" aria-label="Shop the Xvive U4 Wireless In-Ear Monitor System">Shop This System</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="about" class="content-section">
-      <div class="container narrow">
-        <h2>About Natanael</h2>
-        <p>
-          Natanael Cabrera is a worship leader, educator, and multi-instrumentalist who has spent the last decade building volunteer teams, directing live worship experiences, and mentoring young creatives to carry the presence of God with confidence.
-        </p>
-        <p>
-          His heart beats for discipleship through music, crafting environments where excellence and reverence coexist, and where students discover their voice in the Kingdom story.
-        </p>
-        <p>
-          Whether he is coaching a church plant or producing resources for classrooms, Natanael’s mission is unwavering: equip the next generation of worshippers with the training, tools, and spiritual depth they need to lead well.
-        </p>
+    <section class="section fade-in" id="about" aria-labelledby="about-title">
+      <div class="section-header about-header">
+        <h2 id="about-title">About Natanael</h2>
+        <span class="divider" aria-hidden="true"></span>
+      </div>
+      <span class="about-accent-line" aria-hidden="true"></span>
+      <div class="hero-grid about-grid">
+        <div class="about-copy">
+          <p>Natanael Cabrera is a <span>Worship Arts Program Director</span>, worship leader, educator, and multi-instrumentalist who has spent the last decade building volunteer teams, directing live worship experiences, and mentoring young creatives to carry the <span>presence of God</span> with confidence.</p>
+          <p>His heart beats for discipleship through music, crafting environments where excellence and reverence coexist, and where students discover their voice in the Kingdom story.</p>
+          <p>Whether he is coaching a church plant or producing resources for classrooms, Natanael’s mission is unwavering: equip the <span>next generation</span> of worshippers with the training, tools, and spiritual depth they need to lead well.</p>
+        </div>
+        <img class="hero-image" src="./assets/images/about.jpg" alt="Natanael Cabrera portrait" />
       </div>
     </section>
 
-    <section id="music" class="content-section">
-      <div class="container">
-        <h2>Music</h2>
+    <section class="section fade-in" id="music" aria-labelledby="music-title">
+      <div class="section-header">
+        <h2 id="music-title">Music</h2>
+        <span class="divider" aria-hidden="true"></span>
+      </div>
 
-        <div class="music-grid">
-          <article class="music-card">
-            <img src="assets/images/canta-aleluya.jpg" alt="Canta Aleluya cover" class="music-cover" />
-            <h3>Canta Aleluya</h3>
-            <p class="preview-label">AUDIO PREVIEW</p>
-            <audio controls preload="none" class="audio-player">
-              <source src="assets/music/canta-aleluya-preview.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <div class="music-buttons">
-              <a class="btn btn-primary small" href="https://open.spotify.com/artist/0g0j75LKRvyMPzTlWVytFX?si=z8WcZdTrSOWwRGWrzNx5CQ" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
-              <a class="btn btn-outline small" href="https://music.apple.com/us/artist/natanael-cabrera/1706345527" target="_blank" rel="noopener noreferrer">Listen on Apple Music</a>
-              <a class="btn btn-dark small" href="https://youtube.com/@cabreranatanael?si=-x1kBf4DtJRUhPqv" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-            </div>
-          </article>
+      <div class="music-preview-grid music-grid">
+        <article class="preview-card album-card">
+          <img src="./assets/images/canta-aleluya.jpg" alt="Canta Aleluya cover art" />
+          <h3>Canta Aleluya</h3>
+          <span class="preview-label">Audio Preview</span>
+          <audio class="audio-player" controls preload="metadata" src="./assets/music/canta-aleluya-preview.mp3">Your browser does not support the audio element.</audio>
+          <div class="track-links music-buttons">
+            <a class="btn small primary btn-primary song-link" href="https://open.spotify.com/artist/0g0j75LKRvyMPzTlWVytFX" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
+            <a class="btn small outline btn-outline song-link" href="https://music.apple.com/us/artist/natanael-cabrera/1706345527" target="_blank" rel="noopener noreferrer">Listen on Apple Music</a>
+            <a class="btn small ghost btn-dark song-link" href="https://youtube.com/@cabreranatanael" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+          </div>
+        </article>
 
-          <article class="music-card">
-            <img src="assets/images/tu-quien-dices.jpg" alt="Tu Quien Dices Que Soy cover" class="music-cover" />
-            <h3>Tú Quién Dices Que Soy</h3>
-            <p class="preview-label">AUDIO PREVIEW</p>
-            <audio controls preload="none" class="audio-player">
-              <source src="assets/music/tu-quien-dices-preview.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <div class="music-buttons">
-              <a class="btn btn-primary small" href="https://open.spotify.com/artist/0g0j75LKRvyMPzTlWVytFX?si=z8WcZdTrSOWwRGWrzNx5CQ" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
-              <a class="btn btn-outline small" href="https://music.apple.com/us/artist/natanael-cabrera/1706345527" target="_blank" rel="noopener noreferrer">Listen on Apple Music</a>
-              <a class="btn btn-dark small" href="https://youtube.com/@cabreranatanael?si=-x1kBf4DtJRUhPqv" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-            </div>
-          </article>
-        </div>
+        <article class="preview-card album-card">
+          <img src="./assets/images/tu-quien-dices.jpg" alt="Tú Quién Dices Que Soy cover art" />
+          <h3>Tú Quién Dices Que Soy</h3>
+          <span class="preview-label">Audio Preview</span>
+          <audio class="audio-player" controls preload="metadata" src="./assets/music/tu-quien-dices-preview.mp3">Your browser does not support the audio element.</audio>
+          <div class="track-links music-buttons">
+            <a class="btn small primary btn-primary song-link" href="https://open.spotify.com/artist/0g0j75LKRvyMPzTlWVytFX" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
+            <a class="btn small outline btn-outline song-link" href="https://music.apple.com/us/artist/natanael-cabrera/1706345527" target="_blank" rel="noopener noreferrer">Listen on Apple Music</a>
+            <a class="btn small ghost btn-dark song-link" href="https://youtube.com/@cabreranatanael" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="services" class="content-section">
-      <div class="container">
-        <h2>Worship Music Services</h2>
-        <p class="section-intro">Call or text to book a session.</p>
-        <div class="services-contact">
-          <a class="btn btn-primary" href="https://wa.me/17549005470?text=Hi%20Natanael%2C%20I%20am%20interested%20in%20your%20worship%20music%20services." target="_blank" rel="noopener noreferrer">Call +1 (754) 900-5470</a>
-          <p>Email: <a href="mailto:natanaelcabreramusic@gmail.com">natanaelcabreramusic@gmail.com</a></p>
-        </div>
+    <section class="section fade-in" id="services" aria-labelledby="services-title">
+      <div class="section-header">
+        <h2 id="services-title">Worship Music Services</h2>
+        <span class="divider" aria-hidden="true"></span>
       </div>
-    </section>
+      <p class="cta-text">Call or text to book a session.</p>
+      <div class="services-contact">
+        <a class="btn primary btn-primary" href="tel:+17549005470">Call +1 (754) 900-5470</a>
+        <a class="email-link" href="mailto:natanaelcabreramusic@gmail.com">natanaelcabreramusic@gmail.com</a>
+      </div>
 
-    <section class="content-section coaching-section">
-      <div class="container coaching-grid">
-        <div class="coaching-image-wrap">
-          <img src="assets/images/worship-team-coaching.jpg" alt="Worship Team Coaching and Direction" class="coaching-image" />
-        </div>
-
+      <div class="coaching-grid">
         <div class="coaching-copy">
-          <h2>Worship Team Coaching &amp; Direction</h2>
-          <p>
-            I work directly with worship teams to help them grow in excellence, unity, and spiritual depth.
-          </p>
-          <p>
-            From rehearsals and arrangements to leadership and flow, I guide musicians and leaders to build confident, Spirit-led worship environments.
-          </p>
-          <p>
-            Whether your team is just starting or ready to grow to the next level, these sessions are designed to bring clarity, structure, and impact.
-          </p>
-          <a class="btn btn-primary" href="https://wa.me/17549005470?text=Hi%20Natanael%2C%20I%20am%20interested%20in%20your%20worship%20team%20coaching%20services." target="_blank" rel="noopener noreferrer">Book a Worship Session</a>
+          <h3>Worship Team Coaching &amp; Direction</h3>
+          <p>I work directly with worship teams to help them grow in excellence, unity, and spiritual depth.</p>
+          <p>From rehearsals and arrangements to leadership and flow, I guide musicians and leaders to build confident, Spirit-led worship environments.</p>
+          <p>Whether your team is just starting or ready to grow to the next level, these sessions bring clarity, structure, and impact.</p>
+          <button class="btn outline btn-outline" id="openBookingModal" type="button">Book a Worship Session</button>
         </div>
+        <img class="coaching-image" src="./assets/images/worship-team-coaching.jpg" alt="Worship team coaching session" />
+      </div>
+
+      <div class="service-grid" id="serviceGrid">
+        <article class="service-card">
+          <h3>Worship Band Rehearsal Direction</h3>
+          <p>Guest music direction, clear arrangements, and sectional coaching so Sunday feels confident and cohesive.</p>
+        </article>
+        <article class="service-card">
+          <h3>Music Team Coaching</h3>
+          <p>Practical growth plans for volunteer teams and young musicians in musicianship, communication, and spiritual leadership.</p>
+        </article>
+        <article class="service-card">
+          <h3>Worship Consulting for Churches</h3>
+          <p>A step-by-step roadmap for pastors and creative leads building or rebuilding worship ministry culture and systems.</p>
+        </article>
+        <article class="service-card">
+          <h3>Song Arrangement &amp; Training</h3>
+          <p>Custom charts, tracks, and sectional rehearsals for teams that need fresh arrangements with clear execution.</p>
+        </article>
       </div>
     </section>
 
-    <section id="store" class="content-section">
-      <div class="container narrow">
-        <h2>Music Store</h2>
-        <p>
-          Find beginner-friendly instruments trusted by a music educator.
-        </p>
-        <p>
-          Carefully selected keyboards, guitars, percussion, and accessories to help students, families, and worship teams start strong.
-        </p>
-        <p>
-          Perfect for churches, schools, and home musicians.
-        </p>
-        <a class="btn btn-outline" href="https://cabreramusicstore.com" target="_blank" rel="noopener noreferrer">Visit Music Store</a>
+    <section class="section fade-in" id="shop" aria-labelledby="shop-title">
+      <div class="section-header">
+        <h2 id="shop-title">Music Store</h2>
+        <span class="divider" aria-hidden="true"></span>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <p>Find beginner-friendly instruments trusted by a music educator.</p>
+          <p>Carefully selected keyboards, guitars, percussion, and accessories help students, families, and worship teams start strong.</p>
+          <p>Perfect for churches, schools, and home musicians.</p>
+          <div class="shop-actions">
+            <a class="btn primary btn-primary" href="https://cabreramusicstore.com">Visit Music Store</a>
+          </div>
+        </div>
+        <img class="hero-image music-store-collage" src="./assets/images/music-store-collage.jpg" alt="Music store collage with multiple instruments" />
       </div>
     </section>
 
-    <section id="resources" class="content-section">
-      <div class="container">
-        <h2>Worship Resources for Churches</h2>
-        <p>
-          I create complete worship and music programs designed to help churches and schools deliver powerful, meaningful experiences.
-        </p>
-        <p>
-          From ready-to-use event programs to original music and performance resources, everything is designed from real classroom and ministry experience.
-        </p>
-
-        <p class="available-label">AVAILABLE RESOURCES</p>
-
-        <div class="resource-grid">
-          <div class="resource-card">
-            <h3>Kids Church Programs</h3>
-            <p>Plug-and-play lessons, devotionals, and music moments that keep children engaged and centered on truth.</p>
-          </div>
-          <div class="resource-card">
-            <h3>School Performance Programs</h3>
-            <p>Concert-ready scripts, arrangements, and rehearsal plans crafted for elementary and middle school ensembles.</p>
-          </div>
-          <div class="resource-card">
-            <h3>Worship Music &amp; Arrangements</h3>
-            <p>Fresh arrangements, charts, and tracks built for volunteer teams that need clear direction and excellence.</p>
-          </div>
-        </div>
-
-        <a class="btn btn-primary" href="https://www.teacherspayteachers.com/store/natanael-cabrera" target="_blank" rel="noopener noreferrer">Explore All Resources</a>
+    <section class="section resources fade-in" id="resources" aria-labelledby="resources-title">
+      <div class="section-header">
+        <h2 id="resources-title">Worship Resources for Churches</h2>
+        <span class="divider" aria-hidden="true"></span>
       </div>
+      <p>I create complete worship and music programs designed to help churches and schools deliver powerful, meaningful experiences.</p>
+      <p>From ready-to-use event programs to original music and performance resources, everything is designed from real classroom and ministry experience.</p>
+
+      <article class="worship-guide-feature" aria-labelledby="worship-guide-title">
+        <div class="worship-guide-copy">
+          <p class="overline">Free Worship Resource</p>
+          <h3 id="worship-guide-title">Worship Guide</h3>
+          <p>A practical guide created to help worship leaders, musicians, and church teams lead with heart, purpose, and excellence.</p>
+          <button class="btn primary btn-primary" id="openGuideModal" type="button">Get Free Guide</button>
+        </div>
+        <img src="./assets/images/worship-guide-cover.PNG" alt="Worship Guide cover" />
+      </article>
+
+      <h3 class="resource-subheading">Available Resources</h3>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <h4>Kids Church Programs</h4>
+          <p>Plug-and-play lessons, devotionals, and music moments that keep children engaged and centered on truth.</p>
+        </article>
+        <article class="resource-card">
+          <h4>School Performance Programs</h4>
+          <p>Concert-ready scripts, arrangements, and rehearsal plans crafted for elementary and middle school ensembles.</p>
+        </article>
+        <article class="resource-card">
+          <h4>Worship Music &amp; Arrangements</h4>
+          <p>Fresh arrangements, charts, and tracks built for volunteer teams that need clear direction and excellence.</p>
+        </article>
+      </div>
+      <a class="btn outline btn-outline" href="#connect">Explore All Resources</a>
     </section>
 
-    <section id="connect" class="content-section">
-      <div class="container narrow">
-        <h2>Connect</h2>
-        <div class="connect-list">
-          <div><span>Instagram</span><a href="https://instagram.com/natanaelcabreramusic" target="_blank" rel="noopener noreferrer">@natanaelcabreramusic</a></div>
-          <div><span>YouTube</span><a href="https://youtube.com/@cabreranatanael?si=-x1kBf4DtJRUhPqv" target="_blank" rel="noopener noreferrer">youtube.com/@cabreranatanael</a></div>
-          <div><span>Email</span><a href="mailto:natanaelcabreramusic@gmail.com">natanaelcabreramusic@gmail.com</a></div>
-          <div><span>WhatsApp</span><a href="https://wa.me/17549005470?text=Hi%20Natanael%2C%20I%20am%20interested%20in%20your%20music%20and%20services." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></div>
-        </div>
+    <section class="section fade-in" id="connect" aria-labelledby="connect-title">
+      <div class="section-header">
+        <h2 id="connect-title">Connect</h2>
+        <span class="divider" aria-hidden="true"></span>
       </div>
+      <ul class="connect-list">
+        <li><span>Instagram</span><a href="https://instagram.com/natanaelcabreramusic" target="_blank" rel="noopener noreferrer">@natanaelcabreramusic</a></li>
+        <li><span>YouTube</span><a href="https://youtube.com/@cabreranatanael" target="_blank" rel="noopener noreferrer">youtube.com/@cabreranatanael</a></li>
+        <li><span>Email</span><a href="mailto:natanaelcabreramusic@gmail.com">natanaelcabreramusic@gmail.com</a></li>
+        <li><span>WhatsApp</span><a href="https://wa.me/17549005470" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></li>
+      </ul>
     </section>
   </main>
 
+  <div class="article-modal" id="articleModal" aria-hidden="true">
+    <div class="article-modal__backdrop" data-close-article-modal></div>
+    <article class="article-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="articleModalTitle">
+      <button class="article-modal__close" type="button" aria-label="Close article" data-close-article-modal>×</button>
+      <p class="overline">Worship Reflection</p>
+      <h2 id="articleModalTitle">When Worship Becomes Routine</h2>
+      <p class="article-modal__subtitle" id="articleModalSubtitle">Recognizing when worship has become familiar instead of intentional.</p>
+      <div class="article-modal__body" id="articleModalBody">
+        <p>Worship can become routine when we sing the right words, play the right chords, and still forget the reason we are leading. It happens slowly. What once carried wonder can become familiar. What once required dependence can become automatic.</p>
+        <p>But worship was never meant to be mechanical. It is a living response to the presence, goodness, and holiness of God. The goal is not simply to complete a setlist, fill a room with sound, or create an emotional moment. The goal is to lead people into awareness of God.</p>
+        <p>Routine is not always obvious. Sometimes it looks organized, excellent, and polished. But if the heart is disconnected, excellence alone cannot carry the moment. Worship leadership must begin in surrender before it is expressed through music.</p>
+        <p>When worship becomes routine, the invitation is not guilt. The invitation is return. Return to prayer. Return to humility. Return to the reason you started leading in the first place.</p>
+      </div>
+      <button class="btn primary btn-primary article-modal__button" type="button" data-close-article-modal>Close</button>
+    </article>
+  </div>
+
+  <div class="booking-modal" id="bookingModal" aria-hidden="true">
+    <div class="booking-modal__backdrop" data-close-booking-modal></div>
+    <section class="booking-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+      <button class="booking-modal__close" type="button" aria-label="Close booking form" data-close-booking-modal>×</button>
+      <p class="overline">Worship Band Coaching</p>
+      <h2 id="bookingModalTitle">Book a Worship Band Coaching Session</h2>
+      <p class="booking-modal__intro">This session is designed to help your worship band rehearse with direction, improve musical unity, strengthen transitions, and take the team to another level. After you submit the form, Natanael will contact you to discuss the details.</p>
+
+      <form class="booking-form" id="bookingForm">
+        <label>
+          <span>Full Name</span>
+          <input type="text" name="fullName" autocomplete="name" required />
+        </label>
+        <label>
+          <span>Email Address</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Phone Number</span>
+          <input type="tel" name="phone" autocomplete="tel" required />
+        </label>
+        <label>
+          <span>Church / Ministry Name</span>
+          <input type="text" name="ministry" autocomplete="organization" required />
+        </label>
+        <label>
+          <span>Your Position / Role</span>
+          <input type="text" name="role" required />
+        </label>
+        <label>
+          <span>City / State</span>
+          <input type="text" name="cityState" autocomplete="address-level2" required />
+        </label>
+        <label class="booking-form__full">
+          <span>What does your band need help with?</span>
+          <textarea name="needs" rows="4" required></textarea>
+        </label>
+        <button class="btn primary btn-primary booking-submit" type="submit">Submit Request</button>
+      </form>
+
+      <div class="booking-success" id="bookingSuccess" hidden>
+        <h3>Thank you!</h3>
+        <p>Thank you! Your request has been received. Natanael will contact you soon to discuss the details.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="guide-modal" id="guideModal" aria-hidden="true">
+    <div class="guide-modal__backdrop" data-close-guide-modal></div>
+    <section class="guide-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="guideModalTitle">
+      <button class="guide-modal__close" type="button" aria-label="Close Worship Guide form" data-close-guide-modal>×</button>
+      <p class="overline">Free Download</p>
+      <h2 id="guideModalTitle">Get the Worship Guide</h2>
+      <p class="guide-modal__intro">Enter your details and download the guide instantly.</p>
+
+      <form class="guide-form" id="guideForm">
+        <label>
+          <span>First Name</span>
+          <input type="text" name="firstName" autocomplete="given-name" required />
+        </label>
+        <label>
+          <span>Email Address</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Church / Ministry Name</span>
+          <input type="text" name="ministry" autocomplete="organization" required />
+        </label>
+        <button class="btn primary btn-primary guide-submit" type="submit">Submit &amp; Download</button>
+      </form>
+
+      <div class="guide-download" id="guideDownload" hidden>
+        <h3>Your guide is ready.</h3>
+        <p>Your Worship Guide is downloading.</p>
+        <a class="btn primary btn-primary" href="downloads/worship-guide.pdf" download="Worship-Guide-Natanael-Cabrera.pdf">Download Worship Guide</a>
+      </div>
+    </section>
+  </div>
+
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <img src="assets/logo/logo.png" alt="Natanael Cabrera Music" class="footer-logo" />
-      <p>Natanael Cabrera Music</p>
-      <p>All rights reserved</p>
-    </div>
+    <img class="footer-logo" src="./assets/logo/logo.png" alt="Natanael Cabrera Music" />
+    <p>Natanael Cabrera Music</p>
+    <p>All rights reserved</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./script.js" defer></script>
 </body>
 </html>
