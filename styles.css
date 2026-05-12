@@ -1177,6 +1177,32 @@ body.guide-modal-open {
   font-weight: 700;
 }
 
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .about-copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-copy p {
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .about-grid .hero-image {
+    width: 100%;
+    max-width: 100%;
+    justify-self: center;
+    margin-inline: auto;
+  }
+}
+
 /* Music Store collage image */
 .music-store-collage {
   width: 100%;
